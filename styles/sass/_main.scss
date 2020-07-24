@@ -1,0 +1,32 @@
+html,
+body {
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.outer-div {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: stretch;
+
+        .main-div-border {
+            width: 90%;
+            margin: 5% 0;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            border: 1px solid white;
+            border-radius: 5px;
+            color: white;
+            
+            p {
+                text-align: center;
+                font-size: 5vw;
+            }
+        }
+}
+
+
