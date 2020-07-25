@@ -250,6 +250,7 @@ body {
 .outer-div .main-div-border {
   width: 90%;
   margin: 5% 0;
+  padding: 0 5%;
   display: -ms-grid;
   display: grid;
   justify-items: center;
@@ -264,4 +265,17 @@ body {
 .outer-div .main-div-border p {
   text-align: center;
   font-size: 5vw;
+}
+
+.outer-div .inside-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row wrap;
+          flex-direction: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }

@@ -15,6 +15,7 @@ body {
         .main-div-border {
             width: 90%;
             margin: 5% 0;
+            padding: 0 5%;
             display: grid;
             justify-items: center;
             align-items: center;
@@ -26,6 +27,12 @@ body {
                 text-align: center;
                 font-size: 5vw;
             }
+        }
+
+        .inside-flex {
+            display: flex;
+            flex-direction: row wrap;
+            justify-content: space-between;
         }
 }
 
