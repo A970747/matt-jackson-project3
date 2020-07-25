@@ -226,6 +226,76 @@ html {
   overflow: hidden;
 }
 
+.unchecked {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.checked {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.tomato {
+  color: tomato;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.lightskyblue {
+  color: lightskyblue;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.gold {
+  color: gold;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.lightcoral {
+  color: lightcoral;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.orangered {
+  color: orangered;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.darkslategrey {
+  color: darkslategrey;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.aqua {
+  color: aqua;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.seagreen {
+  color: seagreen;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.darkcyan {
+  color: darkcyan;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.dodgerblue {
+  color: dodgerblue;
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
 html,
 body {
   background: #0f0c29;
@@ -237,7 +307,7 @@ body {
 }
 
 .outer-div {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -264,7 +334,7 @@ body {
 
 .outer-div .main-div-border p {
   text-align: center;
-  font-size: 5vw;
+  font-size: 4vw;
 }
 
 .outer-div .inside-flex {
@@ -273,9 +343,25 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row wrap;
-          flex-direction: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  width: 100%;
+}
+
+.outer-div .button-yes {
+  font-size: 100px;
+  padding: 50px;
+  margin: 10px 10px;
+}
+
+.outer-div .submit-button {
+  font-size: 50px;
+  padding: 50px;
+  margin: 10px 10px;
+  color: blue;
 }
