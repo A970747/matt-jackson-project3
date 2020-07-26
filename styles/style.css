@@ -226,74 +226,56 @@ html {
   overflow: hidden;
 }
 
-.unchecked {
+.grayscale {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
 
-.checked {
+.transform {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
 }
 
 .tomato {
   color: tomato;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .lightskyblue {
   color: lightskyblue;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .gold {
   color: gold;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .lightcoral {
   color: lightcoral;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .orangered {
   color: orangered;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .darkslategrey {
   color: darkslategrey;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .aqua {
   color: aqua;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .seagreen {
   color: seagreen;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .darkcyan {
   color: darkcyan;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 .dodgerblue {
   color: dodgerblue;
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
 }
 
 html,
@@ -334,10 +316,13 @@ body {
 
 .outer-div .main-div-border p {
   text-align: center;
-  font-size: 4vw;
+  font-size: calc(3vh + 3vw);
+  margin: 2% 0;
 }
 
 .outer-div .inside-flex {
+  width: 90%;
+  height: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -350,18 +335,23 @@ body {
           justify-content: center;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
-  width: 100%;
 }
 
 .outer-div .button-yes {
-  font-size: 100px;
-  padding: 50px;
+  font-size: calc(4.25vh + 4.25vw);
+  padding: 2%;
+  margin: 10px 10px;
+}
+
+.outer-div .icons-large {
+  font-size: calc(8vh + 8vw);
+  padding: 2%;
   margin: 10px 10px;
 }
 
 .outer-div .submit-button {
-  font-size: 50px;
-  padding: 50px;
+  font-size: calc(1.25vh + 1.25vw);
+  padding: 5%;
   margin: 10px 10px;
   color: blue;
 }

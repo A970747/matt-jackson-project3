@@ -10,31 +10,35 @@ proj3.introArray = [
     'Just answer a few questions.'
 ]
 
-proj3.quizArray = {
+proj3.quizObject = {
     question1: {
         question: 'Have you studied any web dev tech before?',
         answers: ['yes', 'no'],
-        value: ['question3','question2']
+        value: ['question2', 'question3'],
+        name: ['', '']
     },
     question2: {
         question: 'Which of the following technologies are you already confident with?',
-        answers: ['html', 'css','javascript','sass','git','github'],
+        answers: ['html', 'css', 'javascript', 'sass', 'git', 'github'],
         value: 'question3',
+        name: ['', '']
     },
-    question3 : {
+    question3: {
         question: 'Are you interested in front-end, what people see, or back-end, the server-side functionality?',
-        answers: ['Front-End', 'Back-End','Not sure yet.'],
-        value: ['end','question4','end']
+        answers: ['Front-End', 'Back-End', 'Not sure yet.'],
+        value: ['end', 'question4', 'end'],
+        name: ['react', 'node', 'none']
     },
     question4: {
         question: 'Which of the following technologies are you already confident with?',
         answers: ['Relational', 'Non-relational', 'Not sure yet.'],
-        value: ['end', 'end','end']
+        value: ['end', 'end', 'end'],
+        name: ['mysql', 'mongodb', 'none']
     },
 }
 
 
-proj3.initialArray = {
+proj3.initialObject = {
     html: {
         name: 'html',
         icon: 'fab fa-html5',
@@ -53,7 +57,7 @@ proj3.initialArray = {
         link: '',
         color: 'gold',
     },
-    sass : {
+    sass: {
         name: 'sass',
         icon: 'fab fa-sass',
         link: '',
@@ -73,37 +77,43 @@ proj3.initialArray = {
     },
 }
 
-proj3.addStackArray = [
-    {
+proj3.addStackObject = {
+    react: {
         name: 'react',
         icon: 'fab fa-react',
         link: '',
         color: 'aqua',
     },
-    {
+    node: {
         name: 'node',
         icon: 'fab fa-node-js',
         link: '',
         color: 'seagreen',
     },
-    {
+    mysql: {
         name: 'mysql',
         icon: 'icon-mysql',
         link: '',
         color: 'darkcyan',
     },
-    {
+    mongodb: {
         name: 'mongodb',
         icon: 'icon-mongodb',
         link: '',
         color: 'dodgerblue',
     },
-]
+}
+
+proj3.cleanUp = () => {
+    $('p').remove();
+    $('i').remove();
+    $('button').remove();
+}
 
 let introLength = 0;
 proj3.intro = function introLoop() {
     $('.main-div-border > div').hide();
-    setTimeout( () => {
+    setTimeout(() => {
         $('p').remove();
         $(`<p>${proj3.introArray[introLength]}</p>`)
             .hide()
@@ -111,64 +121,101 @@ proj3.intro = function introLoop() {
             .fadeIn(1500)
             .fadeOut(1500);
         introLength++;
-        if ( introLength < proj3.introArray.length){
+        if (introLength < proj3.introArray.length) {
             introLoop();
         }
         else {
-            setTimeout( () => {
+            setTimeout(() => {
                 $('p').remove();
-                proj3.quizLoop(question1)
-            },3000);
+                $('.main-div-border > .inside-flex').show();
+                proj3.quizLoop('question1')
+            }, 3000);
         }
     }, 3000);
 };
 
 proj3.quizLoop = (questArg) => {
-
-    $(`<p>${proj3.quizArray[questArg].question}</p>`)
+    proj3.cleanUp();
+    $(`<p>${proj3.quizObject[questArg].question}</p>`)
         .hide()
         .prependTo('.main-div-border')
         .fadeIn(1500);
 
     if (questArg == 'question2') {
-        for (let x in proj3.initialArray) {
+        $('.main-div-border > div').show();
+        for (let x in proj3.initialObject) {
             $('<i>')
-                .addClass(`${proj3.initialArray[x].icon} unchecked button-yes ${proj3.initialArray[x].color}`)
-                .attr('value',`${x}`)
                 .hide()
+                .addClass(`${proj3.initialObject[x].icon} ${proj3.initialObject[x].color} grayscale button-yes`)
+                .attr('value', `${x}`)
                 .appendTo('.inside-flex')
                 .fadeIn(1500);
         }
-        $('<submit>')
+
+        $('<button>')
             .text(`Continue`)
             .addClass('submit-button')
             .hide()
             .appendTo('.submit')
             .fadeIn(1500);
 
-        $('i').on('click', function() {
-            $(this).toggleClass('unchecked checked')
+        $('i').on('click', function () {
+            $(this).toggleClass('grayscale transform')
         });
 
-        // $('submit').on('click', function() {
-        //     document.preventDefault();
-        // })
+        $('button').on('click', function () {
+            //todo you need to add functionality when you submit the form it'll pop or something from the object.
+            $('i').each(function (i) {
+                if ($(this).attr('class').includes('transform')) {
+                    delete proj3.initialObject[`${$(this).attr('value')}`];
+                };
+            });
+            proj3.quizLoop('question3');
+            $('.main-div-border > .submit').hide();
+        });
     }
+
     else {
-        for (let i = 0; i < proj3.quizArray[questArg].answers.length; i++) {
+        for (let i = 0; i < proj3.quizObject[questArg].answers.length; i++) {
             $('<button>')
-                .text(`${proj3.quizArray[questArg].answers[i]}`)
-                .addClass('button-yes')
-                .attr('value',`${proj3.quizArray[questArg].value[i]}`)
+                .text(`${proj3.quizObject[questArg].answers[i]}`)
+                .addClass('submit-button')
+                .attr('value', `${proj3.quizObject[questArg].value[i]}`)
+                .attr('name', `${proj3.quizObject[questArg].name[i]}`)
                 .hide()
-                .prependTo('.inside-flex')
+                .appendTo('.inside-flex')
                 .fadeIn(1500);
         };
+
+        $('button').on('click', function () {
+            for (let x in proj3.addStackObject) {
+                if ($(this).attr('name') == x && !proj3.initialObject[`${x}`]) {
+                    proj3.initialObject[`${x}`] = proj3.addStackObject[`${x}`];
+                }
+            }
+
+            if($(this).attr('value') == 'end') {
+                proj3.end();
+            } else {
+                proj3.quizLoop($(this).attr('value'));
+            }
+        });
+    }
+}
+
+proj3.end = () => {
+    proj3.cleanUp();
+    for (let x in proj3.initialObject) {
+        $('<i>')
+            .hide()
+            .addClass(`${proj3.initialObject[x].icon} ${proj3.initialObject[x].color} icons-large`)
+            .attr('value', `${x}`)
+            .appendTo('.inside-flex')
+            .fadeIn(1500);
     }
 }
 
 //doc ready
-$(function() {
-    // proj3.intro();
-    proj3.quizLoop('question2');
+$(function () {
+    proj3.intro();
 });

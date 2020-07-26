@@ -25,27 +25,40 @@ body {
             
             p {
                 text-align: center;
-                font-size: 4vw;
+                font-size: calc(3vh + 3vw);
+                margin: 2% 0;
             }
         }
 
         .inside-flex {
+            width: 90%;
+            height: 90%;
+            // display: grid;
+            // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            // justify-content: center;
+            // justify-items: center;
+            // align-content: center;
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
             align-content: space-around;
-            width: 100%;
         }
 
         .button-yes {
-            font-size: 100px;
-            padding: 50px;
+            font-size: calc(4.25vh + 4.25vw);
+            padding: 2%;
+            margin: 10px 10px;
+        }
+
+        .icons-large {
+            font-size: calc(8vh + 8vw);
+            padding: 2%;
             margin: 10px 10px;
         }
 
         .submit-button {
-            font-size: 50px;
-            padding: 50px;
+            font-size: calc(1.25vh + 1.25vw);
+            padding: 5%;
             margin: 10px 10px;
             color: blue;
         }

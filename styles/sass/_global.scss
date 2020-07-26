@@ -1,57 +1,48 @@
-.unchecked {
+.grayscale {
     filter: grayscale(100%);
 }
 
-.checked {
+.transform {
     transform: scale(1.25);
+    transition: ease-in 1s;
 }
 
 .tomato {
     color: tomato;
-    transition: ease-in 1s;
 }
 
 .lightskyblue {
     color: lightskyblue;
-    transition: ease-in 1s;
 }
 
 .gold {
     color: gold;
-    transition: ease-in 1s;
 }
 
 .lightcoral {
     color: lightcoral;
-    transition: ease-in 1s;
 }
 
 .orangered {
     color: orangered;
-    transition: ease-in 1s;
 }
 
 .darkslategrey {
     color: darkslategrey;
-    transition: ease-in 1s;
 }
 
 .aqua {
     color: aqua;
-    transition: ease-in 1s;
 }
 
 .seagreen {
     color: seagreen;
-    transition: ease-in 1s;
 }
 
 .darkcyan {
     color: darkcyan;
-    transition: ease-in 1s;
 }
 
 .dodgerblue {
     color: dodgerblue;
-    transition: ease-in 1s;
 }
