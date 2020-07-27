@@ -1,45 +1,27 @@
-.grayscale {
-    filter: grayscale(100%) opacity(60%);
+html {
+    font-size: 62.5%;
 }
 
-.tomato {
-    color: tomato;
+h1,
+h2,
+h3,
+p, 
+ul,
+li {
+    margin: 0;
+    padding: 0;
 }
 
-.lightskyblue {
-    color: lightskyblue;
+ul {
+    list-style: none;
 }
 
-.gold {
-    color: gold;
-}
-
-.lightcoral {
-    color: lightcoral;
-}
-
-.orangered {
-    color: orangered;
-}
-
-.darkslategrey {
-    color: darkslategrey;
-}
-
-.aqua {
-    color: aqua;
-}
-
-.seagreen {
-    color: seagreen;
-}
-
-.darkcyan {
-    color: darkcyan;
-}
-
-.dodgerblue {
-    color: dodgerblue;
+p {
+    font-family: $primaryFont;
+    text-align: center;
+    font-size: 
+    font-size: calc(2vh + 2vw);
+    margin: 2% 0;
 }
 
 a {
@@ -54,9 +36,6 @@ a:focus {
     transition: ease-in .3s;
 }
 
-.linkStyle {
-    font-family: 'Raleway', sans-serif;
-    color: $primaryWhite;
-    font-size: calc(2.5vh + 1.5vw);
-    padding: 10px 20px;
+.grayscale {
+    filter: grayscale(100%) opacity(60%);
 }

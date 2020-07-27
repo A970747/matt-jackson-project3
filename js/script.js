@@ -168,20 +168,20 @@ proj3.init = function () {
 }
 
 proj3.cleanUp = () => {
-    $('.main-div-border p').remove();
-    $('.main-div-border i').remove();
-    $('.main-div-border button').remove();
-    $('.main-div-border a').remove();
+    $('.mainDivBorder p').remove();
+    $('.mainDivBorder i').remove();
+    $('.mainDivBorder button').remove();
+    $('.mainDivBorder a').remove();
 }
 
 let introLength = 0;
 proj3.intro = function introLoop(x = 500) {
-    $('.main-div-border > div').hide();
+    $('.mainDivBorder > div').hide();
     setTimeout(() => {
         $('p').remove();
         $(`<p>${proj3.introArray[introLength]}</p>`)
             .hide()
-            .prependTo('.main-div-border')
+            .prependTo('.mainDivBorder')
             .fadeIn(1500)
             .fadeOut(1500);
         introLength++;
@@ -191,7 +191,7 @@ proj3.intro = function introLoop(x = 500) {
         else {
             setTimeout(() => {
                 $('p').remove();
-                $('.main-div-border > .inside-flex').show();
+                $('.mainDivBorder > .insideFlex').show();
                 proj3.quizLoop('question1')
             }, 3000);
         }
@@ -202,11 +202,11 @@ proj3.quizLoop = (questArg) => {
     proj3.cleanUp();
     $(`<p>${proj3.quizObject[questArg].question}</p>`)
         .hide()
-        .prependTo('.main-div-border')
+        .prependTo('.mainDivBorder')
         .fadeIn(1500);
 
     if (questArg == 'question2') {
-        $('.main-div-border > div').show();
+        $('.mainDivBorder > div').show();
         for (let x in proj3.initialObject) {
             $('<i>')
             .hide()
@@ -215,7 +215,7 @@ proj3.quizLoop = (questArg) => {
             .attr('value', `${x}`)
             .attr('name', `${x}`)
             .attr('aria-pressed',false)
-            .appendTo('.inside-flex')
+            .appendTo('.insideFlex')
             .fadeIn(1500);
         }
 
@@ -242,7 +242,7 @@ proj3.quizLoop = (questArg) => {
             })
         };
 
-        $('.inside-flex > i').on('click', function () {
+        $('.insideFlex > i').on('click', function () {
             $(this).toggleClass('grayscale');          
         });
 
@@ -266,11 +266,11 @@ proj3.quizLoop = (questArg) => {
                 .attr('value', `${proj3.quizObject[questArg].value[i]}`)
                 .attr('name', `${proj3.quizObject[questArg].name[i]}`)
                 .attr('role', 'button')
-                .appendTo('.inside-flex')
+                .appendTo('.insideFlex')
                 .fadeIn(1500);
         };
 
-        $('.inside-flex > button').on('click', function () {
+        $('.insideFlex > button').on('click', function () {
             for (let x in proj3.addStackObject) {
                 $(this).attr('aria-pressed',true);
                 if ($(this).attr('name') == x && !proj3.initialObject[`${x}`]) {
@@ -289,15 +289,20 @@ proj3.quizLoop = (questArg) => {
 
 proj3.end = () => {
     proj3.cleanUp();
-    $('.main-div-border > .submit').hide();
+    $('.mainDivBorder > .submit').hide();
     for (let x in proj3.initialObject) {
         $('<i>')
             .hide()
             .addClass(`${proj3.initialObject[x].icon} ${proj3.initialObject[x].color} iconsLarge`)
+            // .attr( {
+            //     'aria-label': `${x}`,
+            //     value: `${x}`,
+            //     name: `${x}`,
+            // })
             .attr('aria-label',`${x}`)
             .attr('value', `${x}`)
             .attr('name', `${x}`)
-            .appendTo('.inside-flex')
+            .appendTo('.insideFlex')
             .fadeIn(1500);
     }
 
@@ -309,12 +314,12 @@ proj3.end = () => {
 }
 
 proj3.techInfo = function (techName) {
-    $('.main-div-border > div').show();
+    $('.mainDivBorder > div').show();
     $('<i>')
         .hide()
         .addClass(`${proj3.initialObject[techName].icon} ${proj3.initialObject[techName].color} iconsLargeNoAnim`)
         .attr('aria-label',`${techName} icon`)
-        .prependTo('.main-div-border')
+        .prependTo('.mainDivBorder')
         .fadeIn(1500);
 
     for (let x in proj3.initialObject[techName].learn) {
@@ -326,7 +331,7 @@ proj3.techInfo = function (techName) {
             .attr('name', `${x}`)
             .attr('href', `${proj3.initialObject[techName].learn[x]}`)
             .attr('target','_blank')
-            .appendTo('.inside-flex')
+            .appendTo('.insideFlex')
             .fadeIn(1500);
     }  
 
@@ -354,10 +359,10 @@ proj3.backgroundSetter = function () {
         .addClass(`bgRandomButton ${n}`)
         .attr('aria-label','Background Randomizer')
         .attr('role', 'button')
-        .appendTo('.wrapper-div')
+        .appendTo('.wrapperDiv')
 
 
-    $('.wrapper-div > button').on('click', function () {
+    $('.wrapperDiv > button').on('click', function () {
         $(this).attr('aria-pressed',true);
         $('body')
             .removeClass()

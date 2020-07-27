@@ -226,49 +226,30 @@ html {
   overflow: hidden;
 }
 
-.grayscale {
-  -webkit-filter: grayscale(100%) opacity(60%);
-          filter: grayscale(100%) opacity(60%);
+html {
+  font-size: 62.5%;
 }
 
-.tomato {
-  color: tomato;
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
-.lightskyblue {
-  color: lightskyblue;
+ul {
+  list-style: none;
 }
 
-.gold {
-  color: gold;
-}
-
-.lightcoral {
-  color: lightcoral;
-}
-
-.orangered {
-  color: orangered;
-}
-
-.darkslategrey {
-  color: darkslategrey;
-}
-
-.aqua {
-  color: aqua;
-}
-
-.seagreen {
-  color: seagreen;
-}
-
-.darkcyan {
-  color: darkcyan;
-}
-
-.dodgerblue {
-  color: dodgerblue;
+p {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-size: 4rem;
+  font-size: calc(2vh + 2vw);
+  margin: 2% 0;
 }
 
 a {
@@ -285,14 +266,12 @@ a:focus {
   transition: ease-in .3s;
 }
 
-.linkStyle {
-  font-family: 'Raleway', sans-serif;
-  color: #FDFDFD;
-  font-size: calc(2.5vh + 1.5vw);
-  padding: 10px 20px;
+.grayscale {
+  -webkit-filter: grayscale(100%) opacity(60%);
+          filter: grayscale(100%) opacity(60%);
 }
 
-.wrapper-div {
+.wrapperDiv {
   min-height: 100vh;
   max-width: 1920px;
   width: 100%;
@@ -304,7 +283,7 @@ a:focus {
           align-items: stretch;
 }
 
-.wrapper-div .bgRandomButton {
+.wrapperDiv .bgRandomButton {
   position: absolute;
   top: 1%;
   right: 1%;
@@ -313,29 +292,22 @@ a:focus {
   border: 1px solid #FDFDFD;
 }
 
-.wrapper-div .main-div-border {
+.wrapperDiv .mainDivBorder {
   width: 90%;
-  margin: 5% 0;
-  padding: 0 5%;
+  color: #FDFDFD;
   display: -ms-grid;
   display: grid;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 5% 0;
+  padding: 0 5%;
   border: 1px solid #FDFDFD;
   border-radius: 5px;
-  color: #FDFDFD;
 }
 
-.wrapper-div .main-div-border p {
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
-  font-size: calc(2vh + 2vw);
-  margin: 2% 0;
-}
-
-.wrapper-div .main-div-border .inside-flex {
+.wrapperDiv .mainDivBorder .insideFlex {
   width: 90%;
   height: 90%;
   display: -webkit-box;
@@ -352,80 +324,90 @@ a:focus {
       align-content: space-around;
 }
 
-.wrapper-div .main-div-border .inside-flex .inside-flex > button {
-  -ms-flex-preferred-size: 33%;
-      flex-basis: 33%;
-}
-
-.wrapper-div .main-div-border .questionButton {
+.wrapperDiv .mainDivBorder .questionButton {
+  font-size: 8rem;
   font-size: calc(4.25vh + 4.25vw);
   cursor: pointer;
   padding: 2%;
   margin: 10px 10px;
 }
 
-.wrapper-div .main-div-border .questionButton:hover,
-.wrapper-div .main-div-border .questionButton:focus {
+.wrapperDiv .mainDivBorder .questionButton:hover,
+.wrapperDiv .mainDivBorder .questionButton:focus {
   -webkit-animation: pulse;
           animation: pulse;
   -webkit-animation-duration: .5s;
           animation-duration: .5s;
 }
 
-.wrapper-div .main-div-border .iconsLarge {
+.wrapperDiv .mainDivBorder .iconsLarge {
+  font-size: 16rem;
   font-size: calc(8vh + 8vw);
   padding: 2%;
   margin: 10px 10px;
   cursor: pointer;
 }
 
-.wrapper-div .main-div-border .iconsLargeNoAnim {
+.wrapperDiv .mainDivBorder .iconsLargeNoAnim {
+  font-size: 16rem;
   font-size: calc(8vh + 8vw);
   padding: 2%;
   margin: 10px 10px;
 }
 
-.wrapper-div .main-div-border .iconsLarge:hover,
-.wrapper-div .main-div-border .iconsLarge:focus {
+.wrapperDiv .mainDivBorder .iconsLarge:hover,
+.wrapperDiv .mainDivBorder .iconsLarge:focus {
   -webkit-animation: pulse;
           animation: pulse;
   -webkit-animation-duration: .5s;
           animation-duration: .5s;
 }
 
-.wrapper-div .main-div-border .submitButton {
-  font-family: 'Raleway', sans-serif;
+.wrapperDiv .mainDivBorder .submitButton {
+  background: rgba(0, 0, 0, 0);
+  font-family: "Raleway", sans-serif;
+  font-size: 4rem;
   font-size: calc(3.5vh + .5vw);
+  text-transform: uppercase;
+  color: #FDFDFD;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 5%;
   margin: 10px 10px;
-  color: #FDFDFD;
-  background: rgba(0, 0, 0, 0);
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.wrapperDiv .mainDivBorder .submitButtonAlt {
+  background: rgba(0, 0, 0, 0);
+  font-family: "Raleway", sans-serif;
+  font-size: 4rem;
+  font-size: calc(3.5vh + .5vw);
   text-transform: uppercase;
+  color: #FDFDFD;
+  padding: 8%;
+  margin: 10px 10px;
+  border-radius: 5px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   cursor: pointer;
 }
 
-.wrapper-div .main-div-border .submitButton:focus,
-.wrapper-div .main-div-border .submitButton:hover {
+.wrapperDiv .mainDivBorder .submitButton:focus,
+.wrapperDiv .mainDivBorder .submitButton:hover,
+.wrapperDiv .mainDivBorder .submitButtonAlt:focus,
+.wrapperDiv .mainDivBorder .submitButtonAlt:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.wrapper-div .main-div-border .submitButtonAlt {
-  font-family: 'Raleway', sans-serif;
-  font-size: calc(3.5vh + .5vw);
-  padding: 8%;
-  margin: 10px 10px;
+.wrapperDiv .mainDivBorder .linkStyle {
+  font-family: "Raleway", sans-serif;
   color: #FDFDFD;
-  background: rgba(0, 0, 0, 0);
-  border-radius: 5px;
-  text-transform: uppercase;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  cursor: pointer;
+  font-size: 4rem;
+  font-size: calc(2.5vh + 1.5vw);
+  padding: 10px 20px;
 }
 
 .background1 {
@@ -501,4 +483,44 @@ a:focus {
 .background15 {
   background: -webkit-gradient(linear, right top, left top, from(#4776E6), to(#8E54E9));
   background: linear-gradient(to left, #4776E6, #8E54E9);
+}
+
+.tomato {
+  color: tomato;
+}
+
+.lightskyblue {
+  color: lightskyblue;
+}
+
+.gold {
+  color: gold;
+}
+
+.lightcoral {
+  color: lightcoral;
+}
+
+.orangered {
+  color: orangered;
+}
+
+.darkslategrey {
+  color: darkslategrey;
+}
+
+.aqua {
+  color: aqua;
+}
+
+.seagreen {
+  color: seagreen;
+}
+
+.darkcyan {
+  color: darkcyan;
+}
+
+.dodgerblue {
+  color: dodgerblue;
 }

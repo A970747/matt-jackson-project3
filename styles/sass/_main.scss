@@ -1,4 +1,4 @@
-.wrapper-div {
+.wrapperDiv {
     min-height: 100vh;
     max-width: 1920px;
     width: 100%;
@@ -15,101 +15,108 @@
             border: 1px solid $primaryWhite;
         }
 
-        .main-div-border {
+        .mainDivBorder {
             width: 90%;
-            margin: 5% 0;
-            padding: 0 5%;
+            color: $primaryWhite;
             display: grid;
             justify-items: center;
             align-items: center;
+            margin: 5% 0;
+            padding: 0 5%;
             border: 1px solid $primaryWhite;
             border-radius: 5px;
-            color: $primaryWhite;
+
+
+            .insideFlex {
+                width: 90%;
+                height: 90%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-content: space-around;
+
+                // .insideFlex > button {
+                //     flex-basis: 33%;
+                // }
+            }
+
+            .questionButton {
+                font-size: 8rem;
+                font-size: calc(4.25vh + 4.25vw);
+                cursor: pointer;
+                padding: 2%;
+                margin: 10px 10px;
+            }
+
+            .questionButton:hover,
+            .questionButton:focus {
+                animation: pulse; 
+                animation-duration: .5s;
+            }
+
+            .iconsLarge {
+                font-size: 16rem;
+                font-size: calc(8vh + 8vw);
+                padding: 2%;
+                margin: 10px 10px;
+                cursor: pointer;
+            }
+
+            .iconsLargeNoAnim {
+                font-size: 16rem;
+                font-size: calc(8vh + 8vw);
+                padding: 2%;
+                margin: 10px 10px;
+            }
+
+            .iconsLarge:hover,
+            .iconsLarge:focus {
+                animation: pulse; 
+                animation-duration: .5s;
+            }
+
+            .submitButton {
+                background: rgba(0,0,0,0);
+                font-family: $primaryFont;
+                font-size: 4rem;
+                font-size: calc(3.5vh + .5vw);
+                text-transform: uppercase;
+                color: $primaryWhite;
+                flex-grow: 1;
+                padding: 5%;
+                margin: 10px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .submitButtonAlt {
+                background: rgba(0,0,0,0);
+                font-family: $primaryFont;
+                font-size: 4rem;
+                font-size: calc(3.5vh + .5vw);
+                text-transform: uppercase;
+                color: $primaryWhite;
+                padding: 8%;
+                margin: 10px 10px;
+                border-radius: 5px;
+                flex-grow: 1;
+                cursor: pointer;
+            }
+
+            .submitButton:focus,
+            .submitButton:hover,
+            .submitButtonAlt:focus,
+            .submitButtonAlt:hover {
+                background: rgba(255, 255, 255, .3);
+            }
             
-            p {
-                font-family: 'Raleway', sans-serif;
-                text-align: center;
-                font-size: calc(2vh + 2vw);
-                margin: 2% 0;
+            .linkStyle {
+                font-family: $primaryFont;
+                color: $primaryWhite;
+                font-size: 4rem;
+                font-size: calc(2.5vh + 1.5vw);
+                padding: 10px 20px;
             }
-        
-
-        .inside-flex {
-            width: 90%;
-            height: 90%;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            align-content: space-around;
-
-            .inside-flex > button {
-                flex-basis: 33%;
-            }
-        }
-
-
-        .questionButton {
-            font-size: calc(4.25vh + 4.25vw);
-            cursor: pointer;
-            padding: 2%;
-            margin: 10px 10px;
-        }
-
-        .questionButton:hover,
-        .questionButton:focus {
-            animation: pulse; 
-            animation-duration: .5s;
-        }
-
-        .iconsLarge {
-            font-size: calc(8vh + 8vw);
-            padding: 2%;
-            margin: 10px 10px;
-            cursor: pointer;
-        }
-
-        .iconsLargeNoAnim {
-            font-size: calc(8vh + 8vw);
-            padding: 2%;
-            margin: 10px 10px;
-        }
-
-        .iconsLarge:hover,
-        .iconsLarge:focus {
-            animation: pulse; 
-            animation-duration: .5s;
-        }
-
-        .submitButton {
-            font-family: 'Raleway', sans-serif;
-            font-size: calc(3.5vh + .5vw);
-            padding: 5%;
-            margin: 10px 10px;
-            color: $primaryWhite;
-            background: rgba(0,0,0,0);
-            border-radius: 5px;
-            text-transform: uppercase;
-            flex-grow: 1;
-            cursor: pointer;
-        }
-
-        .submitButton:focus,
-        .submitButton:hover {
-            background: rgba(255, 255, 255, .3);
-        }
-
-        .submitButtonAlt {
-            font-family: 'Raleway', sans-serif;
-            font-size: calc(3.5vh + .5vw);
-            padding: 8%;
-            margin: 10px 10px;
-            color: $primaryWhite;
-            background: rgba(0,0,0,0);
-            border-radius: 5px;
-            text-transform: uppercase;
-            flex-grow: 1;
-            cursor: pointer;
-        }
     }
 }
 
