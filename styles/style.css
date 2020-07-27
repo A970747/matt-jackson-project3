@@ -231,13 +231,6 @@ html {
           filter: grayscale(100%) opacity(60%);
 }
 
-.transform {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
-}
-
 .tomato {
   color: tomato;
 }
@@ -280,6 +273,16 @@ html {
 
 a {
   text-decoration: none;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: ease-in .3s;
+  transition: ease-in .3s;
+}
+
+a:hover,
+a:focus {
+  border-bottom: 2px solid #FDFDFD;
+  -webkit-transition: ease-in .3s;
+  transition: ease-in .3s;
 }
 
 .linkStyle {
@@ -356,17 +359,41 @@ a {
 
 .wrapper-div .main-div-border .questionButton {
   font-size: calc(4.25vh + 4.25vw);
+  cursor: pointer;
   padding: 2%;
   margin: 10px 10px;
 }
 
-.wrapper-div .main-div-border .icons-large {
+.wrapper-div .main-div-border .questionButton:hover,
+.wrapper-div .main-div-border .questionButton:focus {
+  -webkit-animation: pulse;
+          animation: pulse;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+.wrapper-div .main-div-border .iconsLarge {
+  font-size: calc(8vh + 8vw);
+  padding: 2%;
+  margin: 10px 10px;
+  cursor: pointer;
+}
+
+.wrapper-div .main-div-border .iconsLargeNoAnim {
   font-size: calc(8vh + 8vw);
   padding: 2%;
   margin: 10px 10px;
 }
 
-.wrapper-div .main-div-border .submit-button {
+.wrapper-div .main-div-border .iconsLarge:hover,
+.wrapper-div .main-div-border .iconsLarge:focus {
+  -webkit-animation: pulse;
+          animation: pulse;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+.wrapper-div .main-div-border .submitButton {
   font-family: 'Raleway', sans-serif;
   font-size: calc(3.5vh + .5vw);
   padding: 5%;
@@ -378,6 +405,27 @@ a {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  cursor: pointer;
+}
+
+.wrapper-div .main-div-border .submitButton:focus,
+.wrapper-div .main-div-border .submitButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.wrapper-div .main-div-border .submitButtonAlt {
+  font-family: 'Raleway', sans-serif;
+  font-size: calc(3.5vh + .5vw);
+  padding: 8%;
+  margin: 10px 10px;
+  color: #FDFDFD;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  text-transform: uppercase;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  cursor: pointer;
 }
 
 .background1 {

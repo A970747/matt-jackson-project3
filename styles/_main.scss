@@ -50,34 +50,14 @@
 
         .questionButton {
             font-size: calc(4.25vh + 4.25vw);
-            cursor: pointer;
             padding: 2%;
             margin: 10px 10px;
-        }
-
-        .questionButton:hover,
-        .questionButton:focus {
-            animation: pulse; 
-            animation-duration: .5s;
         }
 
         .iconsLarge {
             font-size: calc(8vh + 8vw);
             padding: 2%;
             margin: 10px 10px;
-            cursor: pointer;
-        }
-
-        .iconsLargeNoAnim {
-            font-size: calc(8vh + 8vw);
-            padding: 2%;
-            margin: 10px 10px;
-        }
-
-        .iconsLarge:hover,
-        .iconsLarge:focus {
-            animation: pulse; 
-            animation-duration: .5s;
         }
 
         .submitButton {
@@ -90,25 +70,6 @@
             border-radius: 5px;
             text-transform: uppercase;
             flex-grow: 1;
-            cursor: pointer;
-        }
-
-        .submitButton:focus,
-        .submitButton:hover {
-            background: rgba(255, 255, 255, .3);
-        }
-
-        .submitButtonAlt {
-            font-family: 'Raleway', sans-serif;
-            font-size: calc(3.5vh + .5vw);
-            padding: 8%;
-            margin: 10px 10px;
-            color: $primaryWhite;
-            background: rgba(0,0,0,0);
-            border-radius: 5px;
-            text-transform: uppercase;
-            flex-grow: 1;
-            cursor: pointer;
         }
     }
 }

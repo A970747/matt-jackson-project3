@@ -30,7 +30,7 @@ proj3.quizObject = {
         name: ['react', 'node', 'none']
     },
     question4: {
-        question: 'Which of the following technologies are you already confident with?',
+        question: 'Which type of database would prefer to learn?',
         answers: ['Relational', 'Non-relational', 'Not sure yet.'],
         value: ['end', 'end', 'end'],
         name: ['mysql', 'mongodb', 'mongodb']
@@ -175,7 +175,7 @@ proj3.cleanUp = () => {
 }
 
 let introLength = 0;
-proj3.intro = function introLoop() {
+proj3.intro = function introLoop(x = 500) {
     $('.main-div-border > div').hide();
     setTimeout(() => {
         $('p').remove();
@@ -186,7 +186,7 @@ proj3.intro = function introLoop() {
             .fadeOut(1500);
         introLength++;
         if (introLength < proj3.introArray.length) {
-            introLoop();
+            introLoop(3000);
         }
         else {
             setTimeout(() => {
@@ -195,7 +195,7 @@ proj3.intro = function introLoop() {
                 proj3.quizLoop('question1')
             }, 3000);
         }
-    }, 3000);
+    }, x);
 };
 
 proj3.quizLoop = (questArg) => {
@@ -221,7 +221,7 @@ proj3.quizLoop = (questArg) => {
 
         $('<button>')
             .text(`Continue`)
-            .addClass('submit-button')
+            .addClass('submitButtonAlt')
             .attr('aria-label','continue')
             .attr('role', 'button')
             .hide()
@@ -243,7 +243,7 @@ proj3.quizLoop = (questArg) => {
         };
 
         $('.inside-flex > i').on('click', function () {
-            $(this).toggleClass('grayscale transform');          
+            $(this).toggleClass('grayscale');          
         });
 
         $('.submit > button').on('click', function () {
@@ -253,7 +253,6 @@ proj3.quizLoop = (questArg) => {
                 };
             });
             proj3.quizLoop('question3');
-            $('.main-div-border > .submit').hide();
         });
     }
 
@@ -262,7 +261,7 @@ proj3.quizLoop = (questArg) => {
             $('<button>')
                 .hide()
                 .text(`${proj3.quizObject[questArg].answers[i]}`)
-                .addClass('submit-button')
+                .addClass('submitButton')
                 .attr('aria-label',`${proj3.quizObject[questArg].answers[i]}`)
                 .attr('value', `${proj3.quizObject[questArg].value[i]}`)
                 .attr('name', `${proj3.quizObject[questArg].name[i]}`)
@@ -294,7 +293,7 @@ proj3.end = () => {
     for (let x in proj3.initialObject) {
         $('<i>')
             .hide()
-            .addClass(`${proj3.initialObject[x].icon} ${proj3.initialObject[x].color} icons-large`)
+            .addClass(`${proj3.initialObject[x].icon} ${proj3.initialObject[x].color} iconsLarge`)
             .attr('aria-label',`${x}`)
             .attr('value', `${x}`)
             .attr('name', `${x}`)
@@ -313,7 +312,7 @@ proj3.techInfo = function (techName) {
     $('.main-div-border > div').show();
     $('<i>')
         .hide()
-        .addClass(`${proj3.initialObject[techName].icon} ${proj3.initialObject[techName].color} icons-large`)
+        .addClass(`${proj3.initialObject[techName].icon} ${proj3.initialObject[techName].color} iconsLargeNoAnim`)
         .attr('aria-label',`${techName} icon`)
         .prependTo('.main-div-border')
         .fadeIn(1500);
@@ -334,7 +333,7 @@ proj3.techInfo = function (techName) {
     $('<button>')
         .hide()
         .text(`Back`)
-        .addClass('submit-button')
+        .addClass('submitButtonAlt')
         .attr('aria-label',`Back`)
         .attr('name', `Back`)
         .attr('role', 'button')
