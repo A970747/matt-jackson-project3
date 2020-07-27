@@ -1,16 +1,19 @@
-html,
-body {
-    background: #0f0c29;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.outer-div {
+.wrapper-div {
     min-height: 100vh;
+    max-width: 1920px;
     width: 100%;
     display: grid;
     justify-items: center;
     align-items: stretch;
+
+        .bgRandomButton {
+            position: absolute;
+            top: 1%;
+            right: 1%;
+            padding: 14px;
+            border-radius: 50%;
+            border: 1px solid $primaryWhite;
+        }
 
         .main-div-border {
             width: 90%;
@@ -19,32 +22,33 @@ body {
             display: grid;
             justify-items: center;
             align-items: center;
-            border: 1px solid white;
+            border: 1px solid $primaryWhite;
             border-radius: 5px;
-            color: white;
+            color: $primaryWhite;
             
             p {
+                font-family: 'Raleway', sans-serif;
                 text-align: center;
-                font-size: calc(3vh + 3vw);
+                font-size: calc(2vh + 2vw);
                 margin: 2% 0;
             }
-        }
+        
 
         .inside-flex {
             width: 90%;
             height: 90%;
-            // display: grid;
-            // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            // justify-content: center;
-            // justify-items: center;
-            // align-content: center;
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
             align-content: space-around;
+
+            .inside-flex > button {
+                flex-basis: 33%;
+            }
         }
 
-        .button-yes {
+
+        .questionButton {
             font-size: calc(4.25vh + 4.25vw);
             padding: 2%;
             margin: 10px 10px;
@@ -57,11 +61,17 @@ body {
         }
 
         .submit-button {
-            font-size: calc(1.25vh + 1.25vw);
+            font-family: 'Raleway', sans-serif;
+            font-size: calc(3.5vh + .5vw);
             padding: 5%;
             margin: 10px 10px;
-            color: blue;
+            color: $primaryWhite;
+            background: rgba(0,0,0,0);
+            border-radius: 5px;
+            text-transform: uppercase;
+            flex-grow: 1;
         }
+    }
 }
 
 

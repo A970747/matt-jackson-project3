@@ -1,9 +1,9 @@
 .grayscale {
-    filter: grayscale(100%);
+    filter: grayscale(100%) opacity(60%);
 }
 
 .transform {
-    transform: scale(1.25);
+    transform: scale(1.5);
     transition: ease-in 1s;
 }
 
@@ -45,4 +45,15 @@
 
 .dodgerblue {
     color: dodgerblue;
+}
+
+a {
+    text-decoration: none;
+}
+
+.linkStyle {
+    font-family: 'Raleway', sans-serif;
+    color: $primaryWhite;
+    font-size: calc(2.5vh + 1.5vw);
+    padding: 10px 20px;
 }

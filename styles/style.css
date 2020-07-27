@@ -227,13 +227,13 @@ html {
 }
 
 .grayscale {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  -webkit-filter: grayscale(100%) opacity(60%);
+          filter: grayscale(100%) opacity(60%);
 }
 
 .transform {
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
   -webkit-transition: ease-in 1s;
   transition: ease-in 1s;
 }
@@ -278,18 +278,20 @@ html {
   color: dodgerblue;
 }
 
-html,
-body {
-  background: #0f0c29;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, right top, left top, from(#24243e), color-stop(#302b63), to(#0f0c29));
-  background: linear-gradient(to left, #24243e, #302b63, #0f0c29);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+a {
+  text-decoration: none;
 }
 
-.outer-div {
+.linkStyle {
+  font-family: 'Raleway', sans-serif;
+  color: #FDFDFD;
+  font-size: calc(2.5vh + 1.5vw);
+  padding: 10px 20px;
+}
+
+.wrapper-div {
   min-height: 100vh;
+  max-width: 1920px;
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -299,7 +301,16 @@ body {
           align-items: stretch;
 }
 
-.outer-div .main-div-border {
+.wrapper-div .bgRandomButton {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  padding: 14px;
+  border-radius: 50%;
+  border: 1px solid #FDFDFD;
+}
+
+.wrapper-div .main-div-border {
   width: 90%;
   margin: 5% 0;
   padding: 0 5%;
@@ -309,18 +320,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid white;
+  border: 1px solid #FDFDFD;
   border-radius: 5px;
-  color: white;
+  color: #FDFDFD;
 }
 
-.outer-div .main-div-border p {
+.wrapper-div .main-div-border p {
+  font-family: 'Raleway', sans-serif;
   text-align: center;
-  font-size: calc(3vh + 3vw);
+  font-size: calc(2vh + 2vw);
   margin: 2% 0;
 }
 
-.outer-div .inside-flex {
+.wrapper-div .main-div-border .inside-flex {
   width: 90%;
   height: 90%;
   display: -webkit-box;
@@ -337,21 +349,108 @@ body {
       align-content: space-around;
 }
 
-.outer-div .button-yes {
+.wrapper-div .main-div-border .inside-flex .inside-flex > button {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+}
+
+.wrapper-div .main-div-border .questionButton {
   font-size: calc(4.25vh + 4.25vw);
   padding: 2%;
   margin: 10px 10px;
 }
 
-.outer-div .icons-large {
+.wrapper-div .main-div-border .icons-large {
   font-size: calc(8vh + 8vw);
   padding: 2%;
   margin: 10px 10px;
 }
 
-.outer-div .submit-button {
-  font-size: calc(1.25vh + 1.25vw);
+.wrapper-div .main-div-border .submit-button {
+  font-family: 'Raleway', sans-serif;
+  font-size: calc(3.5vh + .5vw);
   padding: 5%;
   margin: 10px 10px;
-  color: blue;
+  color: #FDFDFD;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  text-transform: uppercase;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.background1 {
+  background: -webkit-gradient(linear, right top, left top, from(#24243e), color-stop(#302b63), to(#0f0c29));
+  background: linear-gradient(to left, #24243e, #302b63, #0f0c29);
+}
+
+.background2 {
+  background: -webkit-gradient(linear, right top, left top, from(#091E3A), color-stop(#2F80ED), to(#2D9EE0));
+  background: linear-gradient(to left, #091E3A, #2F80ED, #2D9EE0);
+}
+
+.background3 {
+  background: -webkit-gradient(linear, right top, left top, from(#9400D3), to(#4B0082));
+  background: linear-gradient(to left, #9400D3, #4B0082);
+}
+
+.background4 {
+  background: -webkit-gradient(linear, right top, left top, from(#c84e89), to(#F15F79));
+  background: linear-gradient(to left, #c84e89, #F15F79);
+}
+
+.background5 {
+  background: -webkit-gradient(linear, right top, left top, from(#0F2027), color-stop(#203A43), to(#2C5364));
+  background: linear-gradient(to left, #0F2027, #203A43, #2C5364);
+}
+
+.background6 {
+  background: -webkit-gradient(linear, right top, left top, from(#72C6EF), to(#004E8F));
+  background: linear-gradient(to left, #72C6EF, #004E8F);
+}
+
+.background7 {
+  background: -webkit-gradient(linear, right top, left top, from(#0052D4), color-stop(#4364F7), to(#6FB1FC));
+  background: linear-gradient(to left, #0052D4, #4364F7, #6FB1FC);
+}
+
+.background8 {
+  background: -webkit-gradient(linear, right top, left top, from(#ad5389), to(#3c1053));
+  background: linear-gradient(to left, #ad5389, #3c1053);
+}
+
+.background9 {
+  background: -webkit-gradient(linear, right top, left top, from(#c0392b), to(#8e44ad));
+  background: linear-gradient(to left, #c0392b, #8e44ad);
+}
+
+.background10 {
+  background: -webkit-gradient(linear, right top, left top, from(#200122), to(#6f0000));
+  background: linear-gradient(to left, #200122, #6f0000);
+}
+
+.background11 {
+  background: -webkit-gradient(linear, right top, left top, from(#0B486B), to(#F56217));
+  background: linear-gradient(to left, #0B486B, #F56217);
+}
+
+.background12 {
+  background: -webkit-gradient(linear, right top, left top, from(#833ab4), color-stop(#fd1d1d), to(#fcb045));
+  background: linear-gradient(to left, #833ab4, #fd1d1d, #fcb045);
+}
+
+.background13 {
+  background: -webkit-gradient(linear, right top, left top, from(#232526), to(#414345));
+  background: linear-gradient(to left, #232526, #414345);
+}
+
+.background14 {
+  background: -webkit-gradient(linear, right top, left top, from(#EB3349), to(#F45C43));
+  background: linear-gradient(to left, #EB3349, #F45C43);
+}
+
+.background15 {
+  background: -webkit-gradient(linear, right top, left top, from(#4776E6), to(#8E54E9));
+  background: linear-gradient(to left, #4776E6, #8E54E9);
 }
