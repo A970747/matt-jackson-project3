@@ -211,10 +211,12 @@ proj3.quizLoop = (questArg) => {
             $('<i>')
             .hide()
             .addClass(`${proj3.initialObject[x].icon} ${proj3.initialObject[x].color} grayscale questionButton`)
-            .attr('aria-label',`${x}`)
-            .attr('value', `${x}`)
-            .attr('name', `${x}`)
-            .attr('aria-pressed',false)
+            .attr({
+                'aria-label': `${x}`,
+                'aria-pressed': false,
+                value: `${x}`,
+                name: `${x}`,
+            })
             .appendTo('.insideFlex')
             .fadeIn(1500);
         }
@@ -222,14 +224,17 @@ proj3.quizLoop = (questArg) => {
         $('<button>')
             .text(`Continue`)
             .addClass('submitButtonAlt')
-            .attr('aria-label','continue')
-            .attr('role', 'button')
+            .attr({
+                'aria-label': 'continue',
+                role: 'button',
+            })
+            // .attr('aria-label','continue')
+            // .attr('role', 'button')
             .hide()
             .appendTo('.submit')
             .fadeIn(1500);
 
         // changes aria-pressed attribute on the icons
-        //todo need to change the icons to buttons with icons.
         let iconSelector = document.querySelectorAll('i');
         for (let i = 0; i < iconSelector.length; i++) {
             iconSelector[i].addEventListener('click', function() {
@@ -243,12 +248,13 @@ proj3.quizLoop = (questArg) => {
         };
 
         $('.insideFlex > i').on('click', function () {
-            $(this).toggleClass('grayscale');          
+            $(this).toggleClass('grayscale delete');          
         });
 
+        
         $('.submit > button').on('click', function () {
             $('i').each(function (i) {
-                if ($(this).attr('class').includes('transform')) {
+                if ($(this).attr('class').includes('delete')) {
                     delete proj3.initialObject[`${$(this).attr('value')}`];
                 };
             });
@@ -262,10 +268,16 @@ proj3.quizLoop = (questArg) => {
                 .hide()
                 .text(`${proj3.quizObject[questArg].answers[i]}`)
                 .addClass('submitButton')
-                .attr('aria-label',`${proj3.quizObject[questArg].answers[i]}`)
-                .attr('value', `${proj3.quizObject[questArg].value[i]}`)
-                .attr('name', `${proj3.quizObject[questArg].name[i]}`)
-                .attr('role', 'button')
+                .attr({
+                    'aria-label': `${proj3.quizObject[questArg].answers[i]}`,
+                    value: `${proj3.quizObject[questArg].value[i]}`,
+                    name: `${proj3.quizObject[questArg].name[i]}`,
+                    role: 'button',
+                })
+                // .attr('aria-label',`${proj3.quizObject[questArg].answers[i]}`)
+                // .attr('value', `${proj3.quizObject[questArg].value[i]}`)
+                // .attr('name', `${proj3.quizObject[questArg].name[i]}`)
+                // .attr('role', 'button')
                 .appendTo('.insideFlex')
                 .fadeIn(1500);
         };
@@ -294,14 +306,14 @@ proj3.end = () => {
         $('<i>')
             .hide()
             .addClass(`${proj3.initialObject[x].icon} ${proj3.initialObject[x].color} iconsLarge`)
-            // .attr( {
-            //     'aria-label': `${x}`,
-            //     value: `${x}`,
-            //     name: `${x}`,
-            // })
-            .attr('aria-label',`${x}`)
-            .attr('value', `${x}`)
-            .attr('name', `${x}`)
+            .attr({
+                'aria-label': `${x}`,
+                value: `${x}`,
+                name: `${x}`,
+            })
+            // .attr('aria-label', `${x}`)
+            // .attr('value',`${x}`)
+            // .attr('name',`${x}`)
             .appendTo('.insideFlex')
             .fadeIn(1500);
     }
@@ -313,6 +325,7 @@ proj3.end = () => {
     });
 }
 
+//works
 proj3.techInfo = function (techName) {
     $('.mainDivBorder > div').show();
     $('<i>')
@@ -327,10 +340,16 @@ proj3.techInfo = function (techName) {
             .hide()
             .text(`${x}`)
             .addClass(`linkStyle`)
-            .attr('aria-label',`${x}`)
-            .attr('name', `${x}`)
-            .attr('href', `${proj3.initialObject[techName].learn[x]}`)
-            .attr('target','_blank')
+            .attr({
+                'aria-label': `${x}`,
+                name: `${x}`,
+                href: `${proj3.initialObject[techName].learn[x]}`,
+                target: '_blank'
+            })
+            // .attr('aria-label',`${x}`)
+            // .attr('name', `${x}`)
+            // .attr('href', `${proj3.initialObject[techName].learn[x]}`)
+            // .attr('target','_blank')
             .appendTo('.insideFlex')
             .fadeIn(1500);
     }  
@@ -339,9 +358,14 @@ proj3.techInfo = function (techName) {
         .hide()
         .text(`Back`)
         .addClass('submitButtonAlt')
-        .attr('aria-label',`Back`)
-        .attr('name', `Back`)
-        .attr('role', 'button')
+        .attr({
+            'aria-label': 'back',
+            name: 'back',
+            role: 'button',
+        })
+        // .attr('aria-label',`Back`)
+        // .attr('name', `Back`)
+        // .attr('role', 'button')
         .appendTo('.submit')
         .fadeIn(1500);
 
@@ -351,14 +375,18 @@ proj3.techInfo = function (techName) {
     });
 };
 
-
+//works
 proj3.backgroundSetter = function () {
 
     let n = `background${Math.ceil(Math.random() * 15)}`
     $('<button>')
         .addClass(`bgRandomButton ${n}`)
-        .attr('aria-label','Background Randomizer')
-        .attr('role', 'button')
+        .attr({
+            'aria-label': 'Background Randomizer',
+            role: 'button',
+        })
+        // .attr('aria-label','Background Randomizer')
+        // .attr('role', 'button')
         .appendTo('.wrapperDiv')
 
 
@@ -373,5 +401,5 @@ proj3.backgroundSetter = function () {
 
 //doc ready
 $(function () {
-    proj3.init();   
+    proj3.init();
 });
