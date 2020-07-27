@@ -247,7 +247,7 @@ ul {
 p {
   font-family: "Raleway", sans-serif;
   text-align: center;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-size: calc(2vh + 2vw);
   margin: 2% 0;
 }
@@ -416,18 +416,18 @@ a:focus {
 }
 
 .background2 {
-  background: -webkit-gradient(linear, right top, left top, from(#091E3A), color-stop(#2F80ED), to(#2D9EE0));
-  background: linear-gradient(to left, #091E3A, #2F80ED, #2D9EE0);
+  background: -webkit-gradient(linear, right top, left top, from(#091E3A), to(#2F80ED));
+  background: linear-gradient(to left, #091E3A, #2F80ED);
 }
 
 .background3 {
-  background: -webkit-gradient(linear, right top, left top, from(#9400D3), to(#4B0082));
-  background: linear-gradient(to left, #9400D3, #4B0082);
+  background: -webkit-gradient(linear, right top, left top, from(#41295a), to(#2F0743));
+  background: linear-gradient(to left, #41295a, #2F0743);
 }
 
 .background4 {
-  background: -webkit-gradient(linear, right top, left top, from(#c84e89), to(#F15F79));
-  background: linear-gradient(to left, #c84e89, #F15F79);
+  background: -webkit-gradient(linear, right top, left top, from(#0F2027), color-stop(#203A43), to(#2C5364));
+  background: linear-gradient(to left, #0F2027, #203A43, #2C5364);
 }
 
 .background5 {
@@ -436,13 +436,13 @@ a:focus {
 }
 
 .background6 {
-  background: -webkit-gradient(linear, right top, left top, from(#72C6EF), to(#004E8F));
-  background: linear-gradient(to left, #72C6EF, #004E8F);
+  background: -webkit-gradient(linear, right top, left top, from(#8E0E00), to(#1F1C18));
+  background: linear-gradient(to left, #8E0E00, #1F1C18);
 }
 
 .background7 {
-  background: -webkit-gradient(linear, right top, left top, from(#0052D4), color-stop(#4364F7), to(#6FB1FC));
-  background: linear-gradient(to left, #0052D4, #4364F7, #6FB1FC);
+  background: -webkit-gradient(linear, right top, left top, from(#000000), to(#e74c3c));
+  background: linear-gradient(to left, #000000, #e74c3c);
 }
 
 .background8 {
@@ -466,8 +466,8 @@ a:focus {
 }
 
 .background12 {
-  background: -webkit-gradient(linear, right top, left top, from(#833ab4), color-stop(#fd1d1d), to(#fcb045));
-  background: linear-gradient(to left, #833ab4, #fd1d1d, #fcb045);
+  background: -webkit-gradient(linear, right top, left top, from(#870000), to(#190A05));
+  background: linear-gradient(to left, #870000, #190A05);
 }
 
 .background13 {
@@ -476,13 +476,13 @@ a:focus {
 }
 
 .background14 {
-  background: -webkit-gradient(linear, right top, left top, from(#EB3349), to(#F45C43));
-  background: linear-gradient(to left, #EB3349, #F45C43);
+  background: -webkit-gradient(linear, right top, left top, from(#c31432), to(#240b36));
+  background: linear-gradient(to left, #c31432, #240b36);
 }
 
 .background15 {
-  background: -webkit-gradient(linear, right top, left top, from(#4776E6), to(#8E54E9));
-  background: linear-gradient(to left, #4776E6, #8E54E9);
+  background: -webkit-gradient(linear, right top, left top, from(#141E30), to(#243B55));
+  background: linear-gradient(to left, #141E30, #243B55);
 }
 
 .tomato {

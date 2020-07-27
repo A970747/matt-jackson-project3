@@ -1,7 +1,7 @@
 //initialize namespace
 const proj3 = {};
 
-//array used for storing first set of items to display, prior to 'quiz' start
+//Array phrases used in intro loop.
 proj3.introArray = [
     'Welcome.',
     'Want to learn web development?',
@@ -10,6 +10,7 @@ proj3.introArray = [
     'Just answer a few questions.'
 ]
 
+//Questionnaire object with questions & responses.
 proj3.quizObject = {
     question1: {
         question: 'Have you studied any web dev tech before?',
@@ -37,12 +38,11 @@ proj3.quizObject = {
     },
 }
 
-
+//Based tech stack object.
 proj3.initialObject = {
     html: {
         name: 'html',
         icon: 'fab fa-html5',
-        link: '',
         color: 'tomato',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/HTML5',
@@ -54,7 +54,6 @@ proj3.initialObject = {
     css: {
         name: 'css',
         icon: 'fab fa-css3-alt',
-        link: '',
         color: 'lightskyblue',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/Cascading_Style_Sheets',
@@ -66,7 +65,6 @@ proj3.initialObject = {
     javascript: {
         name: 'javascript',
         icon: 'fab fa-js-square',
-        link: '',
         color: 'gold',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/Cascading_Style_Sheets',
@@ -78,7 +76,6 @@ proj3.initialObject = {
     sass: {
         name: 'sass',
         icon: 'fab fa-sass',
-        link: '',
         color: 'lightcoral',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/Sass_(stylesheet_language)',
@@ -90,7 +87,6 @@ proj3.initialObject = {
     git: {
         name: 'git',
         icon: 'fab fa-git-alt',
-        link: '',
         color: 'orangered',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/Git',
@@ -102,7 +98,6 @@ proj3.initialObject = {
     github: {
         name: 'github',
         icon: 'fab fa-github',
-        link: '',
         color: 'darkslategrey',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/GitHub',
@@ -112,11 +107,11 @@ proj3.initialObject = {
     },
 }
 
+//Object to pull tech from based on questionnaire answers.
 proj3.addStackObject = {
     react: {
         name: 'react',
         icon: 'fab fa-react',
-        link: '',
         color: 'aqua',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/React_(web_framework)',
@@ -128,7 +123,6 @@ proj3.addStackObject = {
     node: {
         name: 'node',
         icon: 'fab fa-node-js',
-        link: '',
         color: 'seagreen',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/Node.js',
@@ -140,7 +134,6 @@ proj3.addStackObject = {
     mysql: {
         name: 'mysql',
         icon: 'icon-mysql',
-        link: '',
         color: 'darkcyan',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/MySQL',
@@ -152,7 +145,6 @@ proj3.addStackObject = {
     mongodb: {
         name: 'mongodb',
         icon: 'icon-mongodb',
-        link: '',
         color: 'dodgerblue',
         learn: {
             Wikipedia: 'https://en.wikipedia.org/wiki/MongoDB',
@@ -167,6 +159,7 @@ proj3.init = function () {
     proj3.backgroundSetter();
 }
 
+//Clean up DOM elements before adding new.
 proj3.cleanUp = () => {
     $('.mainDivBorder p').remove();
     $('.mainDivBorder i').remove();
@@ -174,6 +167,7 @@ proj3.cleanUp = () => {
     $('.mainDivBorder a').remove();
 }
 
+//intro loop with welcome message, moves to first question on completion.
 let introLength = 0;
 proj3.intro = function introLoop(x = 500) {
     $('.mainDivBorder > div').hide();
@@ -198,6 +192,8 @@ proj3.intro = function introLoop(x = 500) {
     }, x);
 };
 
+//Primary questionnaire logic, uses response values to generate next question/answer set.
+//Question 2 has unique arg because responses are icon-based, and needed different logic.
 proj3.quizLoop = (questArg) => {
     proj3.cleanUp();
     $(`<p>${proj3.quizObject[questArg].question}</p>`)
@@ -228,8 +224,6 @@ proj3.quizLoop = (questArg) => {
                 'aria-label': 'continue',
                 role: 'button',
             })
-            // .attr('aria-label','continue')
-            // .attr('role', 'button')
             .hide()
             .appendTo('.submit')
             .fadeIn(1500);
@@ -274,10 +268,6 @@ proj3.quizLoop = (questArg) => {
                     name: `${proj3.quizObject[questArg].name[i]}`,
                     role: 'button',
                 })
-                // .attr('aria-label',`${proj3.quizObject[questArg].answers[i]}`)
-                // .attr('value', `${proj3.quizObject[questArg].value[i]}`)
-                // .attr('name', `${proj3.quizObject[questArg].name[i]}`)
-                // .attr('role', 'button')
                 .appendTo('.insideFlex')
                 .fadeIn(1500);
         };
@@ -299,6 +289,8 @@ proj3.quizLoop = (questArg) => {
     }
 }
 
+//Similar logic to the Question 2. Generates icons, but no submit button. Could be refactored
+//so that another function generates the images, and we don't duplicate as much code.
 proj3.end = () => {
     proj3.cleanUp();
     $('.mainDivBorder > .submit').hide();
@@ -311,9 +303,6 @@ proj3.end = () => {
                 value: `${x}`,
                 name: `${x}`,
             })
-            // .attr('aria-label', `${x}`)
-            // .attr('value',`${x}`)
-            // .attr('name',`${x}`)
             .appendTo('.insideFlex')
             .fadeIn(1500);
     }
@@ -325,7 +314,9 @@ proj3.end = () => {
     });
 }
 
-//works
+//Generates solo page with links to learning resources for each tech. 
+//Throws back to proj3.end to re-generate the final results, and
+//give user opportunity to explore another tech.
 proj3.techInfo = function (techName) {
     $('.mainDivBorder > div').show();
     $('<i>')
@@ -346,10 +337,6 @@ proj3.techInfo = function (techName) {
                 href: `${proj3.initialObject[techName].learn[x]}`,
                 target: '_blank'
             })
-            // .attr('aria-label',`${x}`)
-            // .attr('name', `${x}`)
-            // .attr('href', `${proj3.initialObject[techName].learn[x]}`)
-            // .attr('target','_blank')
             .appendTo('.insideFlex')
             .fadeIn(1500);
     }  
@@ -363,9 +350,6 @@ proj3.techInfo = function (techName) {
             name: 'back',
             role: 'button',
         })
-        // .attr('aria-label',`Back`)
-        // .attr('name', `Back`)
-        // .attr('role', 'button')
         .appendTo('.submit')
         .fadeIn(1500);
 
@@ -375,7 +359,7 @@ proj3.techInfo = function (techName) {
     });
 };
 
-//works
+//Just for fun, generates a random background gradient from a list of 15.
 proj3.backgroundSetter = function () {
 
     let n = `background${Math.ceil(Math.random() * 15)}`
@@ -385,8 +369,6 @@ proj3.backgroundSetter = function () {
             'aria-label': 'Background Randomizer',
             role: 'button',
         })
-        // .attr('aria-label','Background Randomizer')
-        // .attr('role', 'button')
         .appendTo('.wrapperDiv')
 
 
